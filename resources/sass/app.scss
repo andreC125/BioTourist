@@ -1,8 +1,143 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+
+// Dropzone
+@import "~dropzone/dist/dropzone.css";
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    padding-top: 70px;
+}
+
+.barrebas {
+  text-align:center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.barrebas-link  {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.barrebas-item {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.barrebas .barrebas-link:hover,
+.barrebas .barrebas-link:focus {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+#sloganheader:hover {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.base {
+    fill:#003dd4;
+    cursor: pointer;
+    -webkit-transition: fill .5s ease-out;
+    -moz-transition: fill .5s ease-out;
+    -o-transition: fill .5s ease-out;
+    transition: fill .5s ease-out;
+}
+.base:hover {
+    fill: #bd4;
+}
+
+a.blockAd {
+    text-decoration: none;
+    color: inherit;
+    &:hover h4 {
+        color: #e47517;
+    }
+    &:hover .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+#my-dropzone {
+    border: 2px dashed #0087F7;
+    border-radius: 5px;
+    .message {
+        font-family: "Segoe UI Light", "Arial", serif;
+        font-weight: 600;
+        color: #0087F7;
+        @include font-size(1.5em);
+        letter-spacing: 0.05em;
+    }
+}
+
+a.dz-remove {
+    text-decoration: none !important;
+    &:hover {
+        color: red;
+        font-size: 1rem !important;
+    }
+}
+
+.content {
+
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+
+.content {
+    text-align: center;
+}
+
+.title {
+  color: #fff;
+
+    font-size: 84px;
+}
+
+.links > a {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.links > a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.m-b-md {
+
+    margin-bottom: 30px;
+}
+.slogan{
+  font-size: 21px;
+  margin-bottom: 30px;
+}
