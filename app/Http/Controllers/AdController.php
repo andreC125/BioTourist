@@ -174,4 +174,9 @@ class AdController extends Controller
     {
         //
     }
+    public function json()
+    {
+      $ads = ad ::all();
+      return response()->json($ads);
+    }
 }
