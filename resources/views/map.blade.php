@@ -4,7 +4,7 @@
 
 <head>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&ext=.js&key="></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&ext=.js&key=AIzaSyBuYp1UxzQN2i2lbPmtKUQ9DNnvDyNKgWc"></script>
   <style>
     /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
@@ -19,7 +19,7 @@
     }*/
   </style>
 </head>
-<?php echo $adresses ?>
+
 <?php
 $tabAdr[]=null;
 foreach($adresses as $key=>$val){
