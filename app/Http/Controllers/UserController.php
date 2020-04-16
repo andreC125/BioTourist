@@ -168,4 +168,8 @@ class UserController extends Controller
 
         return view('user.data', compact('user'));
     }
+    public function tickets()
+    {
+        return view('user.tickets');
+    }
 }

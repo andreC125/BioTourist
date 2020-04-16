@@ -65,8 +65,8 @@
           Tickets
         </div>
 
-        <li class="nav-item @if(request()->route()->getName() == 'admin.ads') active @endif">
-            <a class="nav-link" href="{{ route('admin.ads') }}">
+        <li class="nav-item @if(request()->route()->getName() == 'admin.tickets') active @endif">
+            <a class="nav-link" href="{{ route('admin.tickets') }}">
                 <i class="fas fa-fw fa-question"></i>
             <span>Suivi des tickets</span></a>
         </li>

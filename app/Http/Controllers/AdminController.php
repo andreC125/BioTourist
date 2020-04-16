@@ -200,4 +200,8 @@ class AdminController extends Controller
 
         return response()->json(['id' => $ad->id]);
     }
+    public function tickets()
+    {
+        return view('admin.tickets');
+    }
 }

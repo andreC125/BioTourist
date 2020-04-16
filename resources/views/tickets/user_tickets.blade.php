@@ -1,25 +1,25 @@
-@extends('layouts.app')
- 
+@extends('layouts.admin')
+
 @section('title', 'My Tickets')
- 
+
 @section('content')
- 
+
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-ticket">Mes Tickets d'incidents</i>
                 </div>
- 
+
                 <div class="panel-body">
                     @if($tickets->isEmpty())
                         <p>Vous avez crée aucun tickets d'incident.</p>
                         <div class="links">
-                            <a href="/Biotourist/public/new-ticket">Creer un nouveau ticket d'incident</a>
+                            <a href="{{ url('new-ticket') }}">Creer un nouveau ticket d'incident</a>
                         </div>
                     @else
                         <div class="links">
-                            <a href="/Biotourist/public/new-ticket">Creer un nouveau ticket d'incident</a>
+                            <a href="{{ url('new-ticket') }}">Creer un nouveau ticket d'incident</a>
                         </div>
                         <table class="table">
                             <thead>
@@ -55,12 +55,12 @@
                                 @endforeach
                             </tbody>
                         </table>
- 
+
                         {{ $tickets->render() }}
                     @endif
                 </div>
             </div>
         </div>
     </div>
- 
+
 @endsection

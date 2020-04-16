@@ -81,6 +81,25 @@
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
+        <!-- Heading -->
+        <div class="sidebar-heading">
+          Tickets
+        </div>
+
+        <li class="nav-item @if(request()->route()->getName() == 'user.tickets') active @endif">
+            <a class="nav-link" href="{{ route('user.tickets') }}">
+                <i class="fas fa-fw fa-hiking"></i>
+            <span>Voir mes tickets</span></a>
+        </li>
+
+        <li class="nav-item @if(request()->route()->getName() == 'user.attente') active @endif">
+            <a class="nav-link" href="{{ route('user.attente') }}">
+                <i class="fas fa-fw fa-hourglass-start"></i>
+            <span>Créer un ticket</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
