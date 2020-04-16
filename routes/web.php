@@ -57,6 +57,11 @@ Route::middleware('ajax')->group(function () {
 });
 
 // Administration
+    Route::prefix('admin_tickets')->group(function () {
+  Route::get('/', 'AdminController@tickets')->name('admin.tickets');
+});
+
+
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin.index');
     Route::prefix('messages')->group(function () {
@@ -72,6 +77,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
             Route::post('refuse', 'AdminController@refuse')->name('admin.refuse');
         });
     });
+
 });
 
 // Admin and user
@@ -83,6 +89,9 @@ Route::prefix('admin/annonces')->group(function () {
 });
 
 // User
+Route::prefix('user_tickets')->group(function () {
+Route::get('/', 'UserController@tickets')->name('user.tickets');
+});
 Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::get('/', 'UserController@index')->name('user.index');
     Route::prefix('annonces')->group(function () {
@@ -126,3 +135,21 @@ Route::get('/posts/{id}', 'PostController@view');
 Route::get('/posts/{id}/edit', 'PostController@edit');
 Route::post('posts/{id}/update', 'PostController@update');
 Route::delete('posts/{id}/delete', 'PostController@delete');
+
+
+Route::get('new-ticket', 'TicketsController@create');
+
+Route::post('new-ticket', 'TicketsController@store');
+
+Route::get('my_tickets', 'TicketsController@userTickets');
+
+Route::get('tickets/{ticket_id}', 'TicketsController@show');
+
+Route::post('comment', 'CommentsController@postComment');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function (){
+
+Route::get('tickets', 'TicketsController@index');
+
+Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
+});
