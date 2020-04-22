@@ -1,4 +1,9 @@
 @extends('layouts.app')
+<style>
+    .display-comment .display_comment {
+        margin_left 40px
+    }
+</style>
 
 @section('content')
 <div class="container">
