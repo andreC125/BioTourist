@@ -28,3 +28,4 @@ Post</a>
     </div>
 
 </div>
+@endsection
