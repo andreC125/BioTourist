@@ -11,14 +11,17 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Durand',
+            'adresse' => 'Chatelet Paris',
             'email' => 'durand@chezlui.fr',
             'role' => 'admin',
             'password' => bcrypt('admin'),
             'email_verified_at' => Carbon::now(),
+
         ]);
 
         User::create([
             'name' => 'Dupont',
+            'adresse' => 'Champs Elysées',
             'email' => 'dupont@chezlui.fr',
             'password' => bcrypt('user'),
             'email_verified_at' => Carbon::now(),
@@ -26,6 +29,7 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'name' => 'Martin',
+            'adresse' => 'Ingetis Paris',
             'email' => 'martin@chezlui.fr',
             'role' => 'vendeur',
             'password' => bcrypt('vendeur'),
