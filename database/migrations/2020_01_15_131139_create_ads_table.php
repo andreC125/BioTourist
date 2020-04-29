@@ -19,9 +19,9 @@ class CreateAdsTable extends Migration
             $table->text('texte');
             $table->integer ('quantité')->unsigned()->default(0);
             $table->text ('prix');
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('region_id');
-            $table->unsignedBigInteger('user_id')->default(0);
+            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('region_id')->unsigned();
+            $table->integer('user_id')->unsigned()->default(0);
             $table->string('departement');
             $table->string('commune');
             $table->string('commune_name');
@@ -33,6 +33,7 @@ class CreateAdsTable extends Migration
             $table->boolean('active')->default(false);
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('region_id')->references('id')->on('regions');
         });
