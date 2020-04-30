@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -25,6 +26,27 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        /ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdownFlag" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img width="32" height="32" alt="{{ session('locale') }}"
+                                        src="{!! asset('images/flags/' . session('locale') . '-flag.png') !!}"/>
+                            </a>
+                            <div id="flags" class="dropdown-menu" aria-labelledby="navbarDropdownFlag">
+                               @foreach(config('app.locales') as $locale)
+                                
+                                    @if($locale != session('locale'))
+                                        <a class="dropdown-item" href="{{ route('language', $locale) }}">
+                                            
+                                            <img width="32" height="32" alt="{{ session('locale') }}"
+                                                    src="{!! asset('images/flags/' . $locale . '-flag.png') !!}"/>
+                                        </a>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item"><a class="nav-link" id="sloganheader">Pensez à vous connecter/enregistrer pour accéder à tout nos services --></a></li>
@@ -51,7 +73,11 @@
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
-                                </form>
+                                </form>    </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('post.create')}}">{{{ trans('auth.create post')}}} </a>
+                                
                             </li>
                         @endguest
                     </ul>

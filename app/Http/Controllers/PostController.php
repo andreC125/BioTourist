@@ -1,55 +1,44 @@
 <?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
-    use Illuminate\Support\Facades\Auth;
-    use App\Models\Post;
-    use Illuminate\Http\Request;
-    use DB;
+use App\Post;
+use Illuminate\Http\Request;
 
-    class PostController extends Controller {
-      public function index(){
-        $user_id = Auth::user()->id;
-        $posts = DB::table('ads')->where('user_id' ,'=', $user_id)->get();
-        return view('posts',compact('posts'));
-      }
+class PostController extends Controller
+{
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
 
+    public function create()
+    {
+        return view('post');
+    }
 
-        public function view($id){
-            $post = Post::where('id', $id)->firstOrFail();
-            return view('post', compact('post'));
-        }
+    public function store(Request $request)
+    {
+        $post = new Post;
+        $post->title = $request->get('title');
+        $post->body = $request->get('body');
 
-        public function create(){
-            $post = new Post();
-            return view('post-edit', compact('post'));
-        }
+        $post->save();
 
-        public function insert(Request $request){
-            if (Auth::check()){
-                $post = new Post();
-                $inputs = $request->input();
-                $inputs['user_id'] = Auth::user()->id;
-                $post = Post::create($inputs);
-            }
-            //$post = Post::create($request->input());
-            return redirect()->back();
-        }
+        return redirect('posts');
+    }
 
-        public function edit($id){
-            $post = Post::where('id', $id)->firstOrFail();
-            return view('post-edit', compact('post'));
-        }
+    public function index()
+    {
+        $posts = post::all();
 
-        public function update($id, Request $request){
-            $post = Post::where('id', $id)->firstOrFail();
-            $post->update($request->input());
-            //$post->update($request->intersect(['title', 'texte']));
-            return redirect()->back();
-        }
+        return view('index', compact('posts'));
+    }
 
-        public function delete($id){
-            Post::destroy($id);
-            return redirect()->action('PostController@index');
-        }
+    public function show($id)
+    {
+        $post = post::find($id);
+
+        return view('show', compact('post'));
+    }
 }

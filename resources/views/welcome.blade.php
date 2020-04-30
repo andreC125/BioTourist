@@ -24,7 +24,37 @@
                   </div>
                 <div class="slogan" style="margin-bottom: 80px;">
                   Votre nouveau service marchand de fruits et légumes frais à proximité !
+<style>
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    
+                    
+                    @auth
+                        <a href="{{ url('/home') }}">Accueil</a>
+                    @else
+                        <a href="{{ route('login') }}">Connexion</a>
 
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">S'enregistrer</a>
+                        @endif
+                    @endauth
+                    
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    BioTourist
+                </div>
 
                 @if (Route::has('login'))
                 <div class="links">

@@ -1,23 +1,24 @@
-@extends('layouts.form')
+@extends('layouts.app')
 
-@section('card')
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Verifié votre adresse E-Mail') }}</div>
 
-    @component('components.card')
+                <div class="card-body">
+                    @if (session('resent'))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('Un nouveau lien de vérification a été envoyé à votre adresse e-mail.') }}
+                        </div>
+                    @endif
 
-        @slot('title')
-            @lang('Vérification de votre adresse email')
-        @endslot
-
-        @if (session('resent'))
-            <div class="alert alert-success" role="alert">
-                @lang("Un nouveau lien de vérification a été envoyé à votre adresse email.")
+                    {{ __('Avant de continuer, veuillez vérifier votre e-mail pour un lien de vérification.') }}
+                    {{ __('Si vous n\'avez pas reçu l`\'e-mail') }}, <a href="{{ route('verification.resend') }}">{{ __('cliquez ici pour en demander un autre') }}</a>.
+                </div>
             </div>
-        @endif
-
-        <p>@lang("Avant d'utiliser ce site veuillez trouver le lien de vérification dans vos emails")</p>
-        @lang("Si vous n'avez pas reçu l'email ") <a href="{{ route('verification.resend') }}">@lang("cliquez ici pour en recevoir un nouveau")</a>.
-
-
-    @endcomponent
-
+        </div>
+    </div>
+</div>
 @endsection
