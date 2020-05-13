@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Route;
+
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Schema::defaultStringLength(190);
     }
 
     /**
@@ -23,6 +28,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::if ('admin', function () {
+            return auth()->check() && auth()->user()->admin;
+        });
+
+        Route::resourceVerbs([
+            'create' => 'creer',
+            'edit' => 'modifier',
+        ]);
     }
 }
