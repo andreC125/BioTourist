@@ -25,8 +25,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        /ul>
+                   
+                        
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdownFlag" role="button" data-toggle="dropdown"
@@ -48,12 +48,15 @@
                             </div>
                         </li>
                         <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item"><a class="nav-link" id="sloganheader">Pensez à vous connecter/enregistrer pour accéder à tout nos services --></a></li>
+                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
                         @else
                             @admin
                                 <li class="nav-item">

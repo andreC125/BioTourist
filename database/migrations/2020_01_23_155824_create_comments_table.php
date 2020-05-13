@@ -18,11 +18,11 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('parent_id')->unsigned();
+            $table->integer('ticket_id')->unsigned();
             $table->text('body');
             $table->integer('commentable_id')->unsigned(); 
             $table->string('commentable_type');
-            $table->timestamps();
-
+            $table->timestamps(); 
            
         
         });
