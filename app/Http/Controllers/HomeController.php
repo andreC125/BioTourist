@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;    
+use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth' =>'verified']);
+        $this->middleware('auth');
     }
 
     /**
@@ -25,6 +26,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function gmaps()
+   {
+     $locations = DB::table('users')->get();
+     return view('gmaps',compact('locations'));
+   }
 
     Public function language(String $locale)
     {
