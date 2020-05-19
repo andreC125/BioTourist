@@ -5,7 +5,7 @@
     <div class="container">
 
         <div class="card">
-            <h5 class="card-header">Vous pouvez modifier votre adresse ici</h5>
+            <h5 class="card-header">{{{trans('auth.you can change your address here')}}}</h5>
             <div class="card-body">
 
                 @if(session()->has('status'))
@@ -31,7 +31,7 @@
 
                     <br>
 
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">{{{trans('auth.validate')}}}</button>
                 </form>
 
             </div>

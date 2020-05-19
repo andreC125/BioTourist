@@ -2,8 +2,8 @@
     <table class="table table-hover">
         <thead class="thead-light">
             <tr>
-                <th scope="col">Titre</th>
-                <th scope="col">Limite</th>
+                <th scope="col">{{{trans('auth.title')}}}</th>
+            <th scope="col">{{{trans('auth.limit')}}}</th>
                 <th scope="col"></th>
             </tr>
         </thead>

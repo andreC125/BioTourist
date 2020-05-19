@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tableau de bord</h1>
+        <h1 class="h3 mb-0 text-gray-800">{{trans('auth.dashboard')}}</h1>
     </div>
 
     <!-- Content Row -->
@@ -15,7 +15,7 @@
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Annonces actives</div>
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{{{trans('auth.active ads')}}}</div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $adActivesCount }}</div>
                     </div>
                     <div class="col-auto">
@@ -31,7 +31,7 @@
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Annonces en attente</div>
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{{{trans('auth.ads pending')}}}</div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $adAttenteCount }}</div>
                     </div>
                     <div class="col-auto">
@@ -47,7 +47,7 @@
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Annonces obsolètes</div>
+                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">{{{trans('auth.obsolete ads')}}}</div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $adPerimesCount }}</div>
                     </div>
                     <div class="col-auto">

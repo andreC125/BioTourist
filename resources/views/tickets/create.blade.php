@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Ouvrir un nouveau ticket d'incident</div>
+                <div class="panel-heading">{{{trans('auth.open a new incident ticket')}}}</div>
 
                 <div class="panel-body">
 
@@ -18,13 +18,13 @@
                         </div>
                     @endif
                    <div class="links">
-                        <a href="{{ url('admin/tickets') }}">Mes tickets</a>
+                        <a href="{{ url('admin/tickets') }}">{{{trans('auth.my tickets')}}}</a>
                     </div>
                     <form class="form-horizontal" role="form" method="POST">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Titre</label>
+                            <label for="title" class="col-md-4 control-label">{{{trans('auth.title')}}}</label>
 
                             <div class="col-md-6">
                                 <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}">
@@ -38,11 +38,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                            <label for="category" class="col-md-4 control-label">Categorie</label>
+                            <label for="category" class="col-md-4 control-label">{{{trans('auth.category')}}}</label>
 
                             <div class="col-md-6">
                                 <select id="category" type="category" class="form-control" name="category">
-                                    <option value="">Selectionner une categorie</option>
+                                    <option value="">{{{trans('auth.select a category')}}}</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
@@ -57,14 +57,14 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('priority') ? ' has-error' : '' }}">
-                            <label for="priority" class="col-md-4 control-label">Priorité</label>
+                            <label for="priority" class="col-md-4 control-label">{{{trans('auth.priority')}}}</label>
 
                             <div class="col-md-6">
                                 <select id="priority" type="" class="form-control" name="priority">
-                                    <option value="">Niveau de Priorité</option>
-                                    <option value="low">Bas</option>
-                                    <option value="medium">Normal</option>
-                                    <option value="high">Elevé</option>
+                                    <option value="">{{{trans('auth.priority Level')}}}</option>
+                                    <option value="low">{{{trans('auth.low')}}}</option>
+                                    <option value="medium">{{{trans('auth.normal')}}}</option>
+                                    <option value="high">{{{trans('auth.high')}}}</option>
                                 </select>
 
                                 @if ($errors->has('priority'))
@@ -92,7 +92,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-ticket"></i>Envoyer
+                                    <i class="fa fa-btn fa-ticket"></i>{{{trans('auth.send')}}}
                                 </button>
                             </div>
                         </div>

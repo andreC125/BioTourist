@@ -16,16 +16,15 @@
                         
                         <div class="form-group">
                             @csrf
-                            <label class="label"> {{{trans('auth.title post')}}}</label>
+                            <label class="label">{{{trans('auth.title post')}}}</label>
                             <input type="text" name="title" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <label class="label"> {{{trans('auth.body post')}}}</label>
-                            <textarea name="body" rows="10" cols="30" class="form-control" required     
-></textarea>
+                            <label class="label">{{{trans('auth.body post')}}}</label>
+                            <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-succes" />
+                            <button type="submit" class="btn btn-primary">{{{trans('auth.validate')}}}</button>
                             
                         </div>
                     </form>

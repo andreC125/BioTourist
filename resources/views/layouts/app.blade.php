@@ -50,11 +50,11 @@
                         <!-- Authentication Links -->
                          @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{{trans('auth.log in')}}}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{{trans('auth.register')}}}</a>
                                 </li>
                             @endif
                         @else
@@ -64,24 +64,25 @@
                                 </li>
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.index') }}">Mon compte</a>
+                                    <a class="nav-link" href="{{ route('user.index') }}">{{{trans('auth.my account')}}}</a>
                                 </li>
                             @endadmin
-                            <li class="nav-item"><a class="nav-link" id="sloganheader">@lang('Bienvenue '.Auth::user()->name.'('.Auth::user()->role.')')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Déconnexion
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>    </div>
+                            <li class="nav-item"><a class="nav-link" id="sloganheader">{{{trans('auth.welcome')}}}@lang('  '.Auth::user()->name.'('.Auth::user()->role.')')</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('post.create')}}">{{{ trans('auth.create post')}}} </a>
                                 
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    {{{trans('auth.logout')}}}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>   
+                            </li>
+                           
                         @endguest
                     </ul>
                 </div>
@@ -95,10 +96,10 @@
 <footer>
         <nav class="navbar navbar-expand fixed-bottom navbar-dark">
             <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link" href="{{ url('/historique') }}">A propos de nous</a>
-              <a class="nav-item nav-link " href="{{ route('support') }}">Contact</a>
-                <a class="nav-item nav-link " href="{{ route('legal') }}">Mentions légales</a>
-                <a class="nav-item nav-link " href="{{ route('confidentialite') }}">Politique de confidentialité</a>
+              <a class="nav-item nav-link" href="{{ url('/historique') }}">{{{trans('auth.about us')}}}</a>
+              <a class="nav-item nav-link " href="{{ route('support') }}">{{{trans('auth.contact')}}}</a>
+                <a class="nav-item nav-link " href="{{ route('legal') }}">{{{trans('auth.legal Notice')}}}</a>
+                <a class="nav-item nav-link " href="{{ route('confidentialite') }}">{{{trans('auth.privacy Policy')}}}</a>
             </div>
         </nav>
 

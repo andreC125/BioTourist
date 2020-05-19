@@ -8,26 +8,26 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-ticket">Mes Tickets d'incidents</i>
+                    <i class="fa fa-ticket">{{{trans('auth.my Incident Tickets')}}}</i>
                 </div>
 
                 <div class="panel-body">
                     @if($tickets->isEmpty())
-                        <p>Vous avez crée aucun tickets d'incident.</p>
+                        <p>{{{trans('auth.you didn\'t create any incident tickets.')}}}</p>
                         <div class="links">
-                            <a href="{{ url('new-ticket') }}">Creer un nouveau ticket d'incident</a>
+                            <a href="{{ url('new-ticket') }}">{{{trans('auth.create a new incident ticket')}}}</a>
                         </div>
                     @else
                         <div class="links">
-                            <a href="{{ url('new-ticket') }}">Creer un nouveau ticket d'incident</a>
+                            <a href="{{ url('new-ticket') }}">{{{trans('auth.create a new incident ticket')}}}</a>
                         </div>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Categorie</th>
-                                    <th>Titre</th>
-                                    <th>Statut</th>
-                                    <th>Dernière Actualisation</th>
+                                    <th>{{{trans('auth.category')}}}</th>
+                                    <th>{{{trans('auth.title')}}}</th>
+                                    <th>{{{trans('auth.status')}}}</th>
+                                    <th>{{{trans('auth.latest Update')}}}</th>
                                 </tr>
                             </thead>
                             <tbody>

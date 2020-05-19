@@ -23,7 +23,7 @@
         <li class="nav-item @if(request()->route()->getName() == 'admin.index') active @endif">
           <a class="nav-link" href="{{ route('admin.index') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Panneau</span></a>
+            <span>{{{trans('auth.panel')}}}</span></a>
         </li>
 
         <!-- Divider -->
@@ -37,13 +37,13 @@
         <li class="nav-item @if(request()->route()->getName() == 'admin.ads') active @endif">
             <a class="nav-link" href="{{ route('admin.ads') }}">
                 <i class="fas fa-fw fa-question"></i>
-            <span>A modérer</span></a>
+            <span>{{{trans('auth.to moderate')}}}</span></a>
         </li>
 
         <li class="nav-item @if(request()->route()->getName() == 'admin.obsoletes') active @endif">
             <a class="nav-link" href="{{ route('admin.obsoletes') }}">
                 <i class="fas fa-fw fa-hourglass-end"></i>
-            <span>Obsolètes</span></a>
+            <span>{{{trans('auth.obsolete')}}}</span></a>
         </li>
 
         <!-- Divider -->
@@ -57,18 +57,18 @@
         <li class="nav-item @if(request()->route()->getName() == 'admin.messages') active @endif">
             <a class="nav-link" href="{{ route('admin.messages') }}">
                 <i class="fas fa-fw fa-question"></i>
-            <span>A modérer</span></a>
+            <span>{{{trans('auth.to moderate')}}}</span></a>
         </li>
 
         <!-- Heading -->
         <div class="sidebar-heading">
-          Tickets
+          {{{trans('auth.tickets')}}}
         </div>
 
         <li class="nav-item @if(request()->route()->getName() == 'admin.tickets') active @endif">
             <a class="nav-link" href="{{ route('admin.tickets') }}">
                 <i class="fas fa-fw fa-question"></i>
-            <span>Suivi des tickets</span></a>
+            <span>{{{trans('auth.ticket tracking')}}}</span></a>
         </li>
 
         <!-- Divider -->

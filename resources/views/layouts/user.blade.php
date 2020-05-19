@@ -23,7 +23,7 @@
         <li class="nav-item @if(request()->route()->getName() == 'user.index') active @endif">
           <a class="nav-link" href="{{ route('user.index') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Panneau</span></a>
+            <span>{{{trans('auth.panel')}}}</span></a>
         </li>
 
         <!-- Divider -->
@@ -37,19 +37,19 @@
         <li class="nav-item @if(request()->route()->getName() == 'user.actives') active @endif">
             <a class="nav-link" href="{{ route('user.actives') }}">
                 <i class="fas fa-fw fa-hiking"></i>
-            <span>Actives</span></a>
+            <span>{{{trans('auth.active')}}}</span></a>
         </li>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.attente') active @endif">
             <a class="nav-link" href="{{ route('user.attente') }}">
                 <i class="fas fa-fw fa-hourglass-start"></i>
-            <span>En attente</span></a>
+            <span>{{{trans('auth.waiting')}}}</span></a>
         </li>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.obsoletes') active @endif">
             <a class="nav-link" href="{{ route('user.obsoletes') }}">
                 <i class="fas fa-fw fa-hourglass-end"></i>
-            <span>Obsolètes</span></a>
+            <span>{{{trans('auth.obsolete')}}}</span></a>
         </li>
 
         <!-- Divider -->
@@ -57,25 +57,25 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-          Profil
+          {{{trans('auth.profile')}}}
         </div>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.email.edit') active @endif">
             <a class="nav-link" href="{{ route('user.email.edit') }}">
                 <i class="fas fa-fw fa-at"></i>
-            <span>Email</span></a>
+            <span>{{{trans('auth.email')}}}</span></a>
         </li>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.adresse.edit') active @endif">
             <a class="nav-link" href="{{ route('user.adresse.edit') }}">
                 <i class="fas fa-fw fa-home"></i>
-            <span>Adresse</span></a>
+            <span>{{{trans('auth.address')}}}</span></a>
         </li>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.data') active @endif">
             <a class="nav-link" href="{{ route('user.data') }}">
                 <i class="fas fa-fw fa-database"></i>
-            <span>Mes données</span></a>
+            <span>{{{trans('auth.my data')}}}</span></a>
         </li>
 
         <!-- Divider -->
@@ -83,19 +83,19 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-          Tickets
+         {{{trans('auth.tickets')}}}
         </div>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.tickets') active @endif">
             <a class="nav-link" href="{{ route('user.tickets') }}">
                 <i class="fas fa-fw fa-hiking"></i>
-            <span>Voir mes tickets</span></a>
+            <span>{{{trans('auth.see my tickets')}}}</span></a>
         </li>
 
         <li class="nav-item @if(request()->route()->getName() == 'user.attente') active @endif">
             <a class="nav-link" href="{{ route('user.attente') }}">
                 <i class="fas fa-fw fa-hourglass-start"></i>
-            <span>Créer un ticket</span></a>
+            <span>{{{trans('auth.create a ticket')}}}</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider">

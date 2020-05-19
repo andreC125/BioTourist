@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('partials.alerts', ['title' => 'Annonces actives'])
+    @include('partials.alerts', ['title' => '']){{{trans('auth.active ads')}}}
 
     @include('partials.table-add-del-view', ['edit' => true])
 

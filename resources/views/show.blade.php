@@ -15,12 +15,12 @@
                         {{ $post->body}}
                     </p>
                     <hr />
-                    <h4>Display-comments</h4>
+                    
                     
                         <div class="display-comment">
                     @include('partials._comment_replies', ['comments'=> $post->comments, 'post_id'=> $post->id])
                     <hr />
-                    <h4>Ajouter un commentaire</h4>
+                    <h4>{{{trans('auth.add a comment')}}}</h4>
                 <form method="post" action="{{ route('comment.add') }}">
                     @csrf
                     <div class="form-group">
@@ -28,7 +28,7 @@
                         <input type="hidden" name="post_id" value="{{ $post->id }}"/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-warning" value="Add comment" />
+                        <input type="submit" class="btn btn-warning" value={{{trans('auth.add a comment')}}} />
 
                     </div>
 

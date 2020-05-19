@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('partials.alerts', ['title' => 'Annonces en attente'])
+    @include('partials.alerts', ['title' => '']){{{trans('auth.ads pending')}}}
 
     @include('partials.table-add-del-view', ['noAdd' => true])
 
