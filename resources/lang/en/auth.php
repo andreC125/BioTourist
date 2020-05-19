@@ -97,5 +97,7 @@ return [
     'low'=>'Low',
     'normal'=>'Normal',
     'high'=>'High',
+    'created on'=>'Created on',
+    'send a reply'=>'Send a reply',
 ];  
 

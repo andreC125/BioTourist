@@ -21,15 +21,15 @@
 
                     <div class="ticket-info">
                         <p>{{ $ticket->message }}</p>
-                        <p>Category: {{ $ticket->category->name }}</p>
+                        <p>{{{trans('auth.category')}}}: {{ $ticket->category->name }}</p>
                         <p>
                             @if ($ticket->status === 'Ouvert')
-                                Status: <span class="label label-success">{{ $ticket->status }}</span>
+                                {{{trans('auth.status')}}}: <span class="label label-success">{{ $ticket->status }}</span>
                             @else
-                                Status: <span class="label label-danger">{{ $ticket->status }}</span>
+                            {{{trans('auth.status')}}}: <span class="label label-danger">{{ $ticket->status }}</span>
                             @endif
                         </p>
-                        <p>Created on: {{ $ticket->created_at->diffForHumans() }}</p>
+                        <p>{{{trans('auth.created on')}}}: {{ $ticket->created_at->diffForHumans() }}</p>
                     </div>
 
                 </div>

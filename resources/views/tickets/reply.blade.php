@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-heading">Envoyer une réponse</div>
+    <div class="panel-heading">{{{trans('auth.send a reply')}}}</div>
  
         <div class="panel-body">
             <div class="comment-form">
@@ -20,7 +20,7 @@
                     </div>
  
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit" class="btn btn-primary">{{{trans('auth.send')}}}</button>
                     </div>
                 </form>
             </div>
