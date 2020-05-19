@@ -99,5 +99,12 @@ return [
     'high'=>'High',
     'created on'=>'Created on',
     'send a reply'=>'Send a reply',
+    'ads to moderate'=>'Ads to moderate',
+    'message to moderate'=>'Message to moderate',
+    'obsolete Ads'=>'Obsolete Ads',
+    'text'=>'Text',
+    'closed'=>'Closed',
+    'comment'=>'Comment',
+    'closing'=>'Closing',
 ];  
 

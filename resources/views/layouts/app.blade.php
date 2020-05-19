@@ -67,7 +67,7 @@
                                     <a class="nav-link" href="{{ route('user.index') }}">{{{trans('auth.my account')}}}</a>
                                 </li>
                             @endadmin
-                            <li class="nav-item"><a class="nav-link" id="sloganheader">{{{trans('auth.welcome')}}}@lang('  '.Auth::user()->name.'('.Auth::user()->role.')')</a>
+                            <li class="nav-item"><a class="nav-link" id="sloganheader">{{{trans('auth.welcome')}}}@lang('  '.Auth::user()->name.' ('.Auth::user()->role.')')</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('post.create')}}">{{{ trans('auth.create post')}}} </a>

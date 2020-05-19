@@ -22,6 +22,7 @@ class CreateCommentsTable extends Migration
             $table->text('body');
             $table->integer('commentable_id')->unsigned(); 
             $table->string('commentable_type');
+            $table->text('comment');
             $table->timestamps(); 
            
         
@@ -36,6 +37,6 @@ class CreateCommentsTable extends Migration
     public function down()
     {
      
-        
+        Schema::dropIfExists('comments');
     } 
 }

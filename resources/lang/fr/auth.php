@@ -98,4 +98,11 @@ return [
     'high'=>'Élevé',
     'created on'=>'Créé le',
     'send a reply'=>'Envoyer une réponse',
+    'ads to moderate'=>'Annonces à modérer',
+    'message to moderate'=>'Messages à modérer',
+    'obsolete Ads'=>'Annonces obsolètes',
+    'text'=>'Texte',
+    'closed'=>'Fermé',
+    'comment'=>'Commentaire',
+    'closing'=>'Fermeture',
 ];

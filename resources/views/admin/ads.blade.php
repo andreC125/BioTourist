@@ -4,13 +4,13 @@
 
     @include('partials.message', ['url' => route('admin.refuse')])
 
-    @include('partials.alerts', ['title' => 'Annonces à modérer'])
+    @include('partials.alerts', ['title' => '']){{{trans('auth.ads to moderate')}}}
 
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Titre</th>
+                    <th scope="col">{{{trans('auth.title')}}}</th>
                     <th scope="col"></th>
                 </tr>
             </thead>

@@ -7,7 +7,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-ticket">Tickets</i>
+                    <i class="fa fa-ticket">{{{trans('auth.tickets')}}}</i>
                 </div>
                 @if (isset($tickets))
                 <div class="panel-body">
@@ -17,10 +17,10 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Categorie</th>
-                                <th>Titre</th>
-                                <th>Statut</th>
-                                <th>Dernière Actualisation</th>
+                                <th>{{{trans('auth.category')}}}</th>
+                                <th>{{{trans('auth.title')}}}</th>
+                                <th>{{{trans('auth.status')}}}</th>
+                                <th>{{{trans('auth.latest Update')}}}</th>
                                 <th style="text-align:center" colspan="2">Actions</th>
                             </tr>
                             </thead>
@@ -45,11 +45,11 @@
                                     <td>{{ $ticket->updated_at }}</td>
                                     <td>
                                         @if($ticket->status === 'Ouvert')
-                                            <a href="{{ url('tickets/' . $ticket->ticket_id) }}" class="btn btn-primary">Commentaire</a>
+                                            <a href="{{ url('tickets/' . $ticket->ticket_id) }}" class="btn btn-primary">{{{trans('auth.comment')}}}</a>
 
                                             <form action="{{ url('admin/close_ticket/' . $ticket->ticket_id) }}" method="POST">
                                                 {!! csrf_field() !!}
-                                                <button type="submit" class="btn btn-danger">Fermeture</button>
+                                                <button type="submit" class="btn btn-danger">{{{trans('auth.closing')}}}</button>
                                             </form>
                                         @endif
                                     </td>
