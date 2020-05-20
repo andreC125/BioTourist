@@ -32,24 +32,20 @@
 
     </head>
     <body>
-        
-        
+
+
         <div class="flex-center position-ref full-height">
-            
+
 
             <div class="content">
-                
+
 
                 @if (Route::has('login'))
                 <div class="links">
                   @auth
                   <a href="{{ url('/map') }}">{{{trans('auth.map')}}}</a>
                   <a href="{{ url('/home') }}">{{{trans('auth.home')}}}</a>
-                  <a href="{{ url('/annonces') }}">{{{trans('auth.ads')}}}</a>
-                  <a href="{{ url('/posts') }}">{{{trans('auth.my purchases')}}}</a>
-                  <a href="{{ url('/posts') }}">{{{trans('auth.my sales')}}}</a>
-                  <a href="{{ url('/posts') }}">{{{trans('auth.my products')}}}</a>
-                  <a href="{{ url('/posts') }}">{{{trans('auth.my reviews')}}}</a>
+
                   @else
                   <a href="{{ url('/map') }}">{{{trans('auth.map')}}}</a>
                   @endif
